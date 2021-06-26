@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, make_response, jsonify
 from flask_cors import CORS
 
 
@@ -28,6 +28,10 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    @app.errorhandler(404)
+    def not_found(error):
+        return make_response(jsonify({'error': 'Not found'}), 404)
 
     from . import db
     db.init_app(app)

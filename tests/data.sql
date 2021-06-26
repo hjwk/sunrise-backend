@@ -5,5 +5,6 @@ VALUES
 
 INSERT INTO alarm (id, created, enabled, days, hour, minute)
 VALUES
-  (0, '2021-03-05 10:40:37', true, 'Monday', 10, 30),
-  (1, '2021-04-08 20:04:05', false, 'Tuesday', 8, 30);
+  (0, '2021-03-05 10:40:37', true, '[1,2]', 10, 30),
+  (1, '2021-04-08 20:04:05', false, '[4,5]', 8, 30),
+  (2, '2021-04-08 20:04:05', false, '[1,2,3]', 8, 30);
